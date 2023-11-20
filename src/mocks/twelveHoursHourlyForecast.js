@@ -1,4 +1,4 @@
-export const twelveHoursHourlyForecast = [
+const twelveHoursHourlyForecast = [
     {
         "DateTime": "2023-11-20T00:00:00+01:00",
         "EpochDateTime": 1700434800,
@@ -197,4 +197,6 @@ export const twelveHoursHourlyForecast = [
         "MobileLink": "http://www.accuweather.com/en/pl/gbokie/1408844/hourly-weather-forecast/1408844?day=2&hbhhour=11&unit=c&lang=en-us",
         "Link": "http://www.accuweather.com/en/pl/gbokie/1408844/hourly-weather-forecast/1408844?day=2&hbhhour=11&unit=c&lang=en-us"
     }
-]
+];
+
+export default twelveHoursHourlyForecast;

@@ -1,6 +1,5 @@
+import { Link, Typography } from "@mui/material";
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import Typography from "@mui/material/Typography";
-import {Link} from "@mui/material";
 export const Copyright = () => {
     return (
         <Typography variant="body2" component="footer" color="text.secondary" align="center" sx={{my: 4}}>

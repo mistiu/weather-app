@@ -1,5 +1,5 @@
 * {
-    -moz-user-select:none; /* firefox */
+    -moz-user-select: none; /* Firefox */
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE*/
     user-select: none; /* Standard syntax */

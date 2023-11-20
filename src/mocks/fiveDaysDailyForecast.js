@@ -1,4 +1,4 @@
-export const fiveDaysDailyForecast = {
+const fiveDaysDailyForecast = {
     "Headline": {
         "EffectiveDate": "2023-11-22T07:00:00+01:00",
         "EffectiveEpochDate": 1700632800,
@@ -181,4 +181,6 @@ export const fiveDaysDailyForecast = {
             "Link": "http://www.accuweather.com/en/pl/gbokie/1408844/daily-weather-forecast/1408844?day=5&unit=c&lang=en-us"
         }
     ]
-}
+};
+
+export default fiveDaysDailyForecast;

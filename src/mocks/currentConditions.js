@@ -1,4 +1,4 @@
-export const currentConditions = [
+const currentConditions = [
     {
         "LocalObservationDateTime": "2023-11-19T23:41:00+01:00",
         "EpochTime": 1700433660,
@@ -379,4 +379,6 @@ export const currentConditions = [
         "MobileLink": "http://www.accuweather.com/en/pl/gbokie/1408844/current-weather/1408844?lang=en-us",
         "Link": "http://www.accuweather.com/en/pl/gbokie/1408844/current-weather/1408844?lang=en-us"
     }
-]
+];
+
+export default currentConditions;

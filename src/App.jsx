@@ -1,13 +1,11 @@
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import {SearchBar} from "./Components/SearchBar.jsx";
-import {CurrentWeather} from "./Components/CurrentWeather.jsx";
-import {TodayForecast} from "./Components/TodayForecast.jsx";
-import {CurrentAirConditions} from "./Components/CurrentAirConditions.jsx";
-import {WeekForecast} from "./Components/WeekForecast.jsx";
+import { Container, Grid, Box } from '@mui/material';
+import { SearchBar } from "./Components/SearchBar.jsx";
+import { CurrentWeather } from "./Components/CurrentWeather.jsx";
+import { TodayForecast } from "./Components/TodayForecast.jsx";
+import { CurrentAirConditions } from "./Components/CurrentAirConditions.jsx";
+import { WeekForecast } from "./Components/WeekForecast.jsx";
+import { Copyright } from "./Components/Copyright.jsx";
 import './App.css';
-import {Copyright} from "./Components/Copyright.jsx";
 
 export default function App() {
     return (

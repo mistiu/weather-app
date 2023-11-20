@@ -1,11 +1,9 @@
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import {Grid, styled} from "@mui/material";
+import { Grid, Box, Typography, styled } from "@mui/material";
 import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
 import AirIcon from '@mui/icons-material/Air';
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import CycloneIcon from '@mui/icons-material/Cyclone';
-import {currentConditions} from "../mocks/currentConditions.js";
+import currentConditions from "../mocks/currentConditions.js";
 
 const BoxFlex = styled(Box)(`
   display: flex;

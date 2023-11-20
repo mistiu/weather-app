@@ -1,4 +1,4 @@
-export const autoCompleteSearch = [
+const autoCompleteSearch = [
     {
         "Version": 1,
         "Key": "1408842",
@@ -149,4 +149,6 @@ export const autoCompleteSearch = [
             "LocalizedName": "West Pomerania"
         }
     }
-]
+];
+
+export default autoCompleteSearch;

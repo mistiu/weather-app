@@ -1,7 +1,6 @@
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import {autoCompleteSearch} from "../mocks/autoCompleteSearch.js";
-import {currentConditions} from "../mocks/currentConditions.js";
+import { Box, Typography } from "@mui/material";
+import autoCompleteSearch from "../mocks/autoCompleteSearch.js";
+import currentConditions from "../mocks/currentConditions.js";
 
 const city = () => {
     const apiCity = autoCompleteSearch[4].LocalizedName;
