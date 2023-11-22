@@ -1,35 +1,36 @@
+import propTypes from "prop-types";
 import { Grid, Box, Typography, styled } from "@mui/material";
 import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
 import AirIcon from '@mui/icons-material/Air';
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import CycloneIcon from '@mui/icons-material/Cyclone';
-import currentConditions from "../mocks/currentConditions.js";
 
 const BoxFlex = styled(Box)(`
   display: flex;
 `);
 
-const realFeel = () => {
-    const apiRealFeel = currentConditions[0].RealFeelTemperature.Metric.Value;
-    return typeof apiRealFeel === 'number' ? apiRealFeel : '-';
-};
 
-const wind = () => {
-    const apiWind = currentConditions[0].Wind.Speed.Metric.Value;
-    return typeof apiWind === 'number' ? apiWind : '-';
-};
+export const CurrentAirConditions = ({ currentConditions }) => {
+    const realFeel = () => {
+        const apiRealFeel = currentConditions.realFeelTemperature;
+        return typeof apiRealFeel === 'number' ? apiRealFeel : '-';
+    };
 
-const uvIndex = () => {
-    const apiUvIndex = currentConditions[0].UVIndex;
-    return typeof apiUvIndex === 'number' ? apiUvIndex : '-';
-};
+    const wind = () => {
+        const apiWind = currentConditions.wind;
+        return typeof apiWind === 'number' ? apiWind : '-';
+    };
 
-const airPressure = () => {
-    const apiAirPressure = currentConditions[0].Pressure.Metric.Value;
-    return typeof apiAirPressure === 'number' ? apiAirPressure : '-';
-};
+    const uvIndex = () => {
+        const apiUvIndex = currentConditions.uvIndex;
+        return typeof apiUvIndex === 'number' ? apiUvIndex : '-';
+    };
 
-export const CurrentAirConditions = () => {
+    const airPressure = () => {
+        const apiAirPressure = currentConditions.pressure;
+        return typeof apiAirPressure === 'number' ? apiAirPressure : '-';
+    };
+
     return (
         <Box sx={{backgroundColor: 'primary.main', borderRadius: '1rem', py: 2, px: 3, my: 3}}>
             <Typography variant="subtitle2" sx={{mb: 1}} color="text.secondary" fontWeight="bold">AIR CONDITIONS</Typography>
@@ -73,4 +74,8 @@ export const CurrentAirConditions = () => {
             </Grid>
         </Box>
     )
+}
+
+CurrentAirConditions.propTypes = {
+    currentConditions: propTypes.object.isRequired,
 }

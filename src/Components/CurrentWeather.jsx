@@ -1,34 +1,37 @@
+import { useAtomValue } from "jotai";
+import propTypes from "prop-types";
 import { Box, Typography } from "@mui/material";
-import autoCompleteSearch from "../mocks/autoCompleteSearch.js";
-import currentConditions from "../mocks/currentConditions.js";
+import { cityAtom } from "../Atoms.js";
 
-const city = () => {
-    const apiCity = autoCompleteSearch[4].LocalizedName;
-    return typeof apiCity === 'string' ? apiCity : '-';
-};
+export const CurrentWeather = ({ currentConditions }) => {
 
-const cloudCover = () => {
-    const apiCloudCover = currentConditions[0].CloudCover;
-    return typeof apiCloudCover === 'number' ? apiCloudCover : '-';
-};
+    const cityName = useAtomValue(cityAtom);
 
-const temperature = () => {
-    const apiTemperature = currentConditions[0].Temperature.Metric.Value;
-    let roundedTemperature = null;
+    const city = () => {
+        return typeof cityName === 'string' ? cityName : '-';
+    };
 
-    if (typeof apiTemperature === 'number') {
-        roundedTemperature = Math.round(apiTemperature);
-    }
+    const cloudCover = () => {
+        const apiCloudCover = typeof currentConditions === 'object' ? currentConditions.cloudCover : null;
+        return typeof apiCloudCover === 'number' ? apiCloudCover : '-';
+    };
 
-    return roundedTemperature || '-';
-};
+    const temperature = () => {
+        const apiTemperature = typeof currentConditions === 'object' ? currentConditions.temperature : null;
+        let roundedTemperature = null;
 
-const weatherIcon = () => {
-    const apiWeatherIcon = currentConditions[0].WeatherIcon;
-    return typeof apiWeatherIcon === 'number' ? apiWeatherIcon : '1';
-};
+        if (typeof apiTemperature === 'number') {
+            roundedTemperature = Math.round(apiTemperature);
+        }
 
-export const CurrentWeather = () => {
+        return roundedTemperature || '-';
+    };
+
+    const weatherIcon = () => {
+        const apiWeatherIcon = typeof currentConditions === 'object' ? currentConditions.weatherIcon : null;
+        return typeof apiWeatherIcon === 'number' ? apiWeatherIcon : '1';
+    };
+
     return (
         <Box sx={{my: 3, mx: 4, display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
             <Box>
@@ -42,3 +45,7 @@ export const CurrentWeather = () => {
         </Box>
     )
 }
+
+CurrentWeather.propTypes = {
+    currentConditions: propTypes.object.isRequired
+};
